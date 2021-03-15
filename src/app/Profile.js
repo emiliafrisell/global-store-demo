@@ -12,11 +12,19 @@ export default function Profile () {
 
       <div className="profile-data">
         <div className="profile-data-item">
-          <h3>Name:</h3>
+          <h3>First Name:</h3>
           <p>...</p>
         </div>
 
         <VerticalSpace height={15} />
+        
+        <div className="profile-data-item">
+          <h3>Last Name:</h3>
+          <p>...</p>
+        </div>
+
+        <VerticalSpace height={15} />
+        
 
         <div className="profile-data-item">
           <h3>Age:</h3>

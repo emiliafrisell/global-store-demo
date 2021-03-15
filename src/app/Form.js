@@ -1,11 +1,28 @@
 import React from 'react'
 import VerticalSpace from './VerticalSpace'
 
-export default function Form () {
+export default function Form ( { setUserName, onSuccess } ) {
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+    const firstName = e.target[0].value
+
+    onSuccess({
+      firstName,
+      lastName: e.target[1].value,
+      age: e.target[2].value
+    })
+
+    console.log(firstName)
+    
+    setUserName(e.target[0].value + ' ' + e.target[1].value)
+   
+  }
+
   return (
     <>
       <h1>Fill in with some data</h1>
-      <form>
+      <form onSubmit={onSubmit}>
         <div className="form-item">
           <label htmlFor="firstName">First Name</label>
           <VerticalSpace height={5} />
